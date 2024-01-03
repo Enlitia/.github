@@ -10,6 +10,7 @@ jobs:
   static-analysis-and-test:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - uses: Enlitia/internal-composite-action-poetry-install@main
         with:
           python-version: "3.10"
