@@ -10,7 +10,7 @@ jobs:
   static-analysis-and-test:
     runs-on: ubuntu-latest
     steps:
-      - uses: Enlitia/.github/composites/poetry-install.yml@main
+      - uses: Enlitia/internal-composite-action-poetry-install@main
       # Run custom commands ...
       - name: Run static-analysis
         run: make static-analysis
