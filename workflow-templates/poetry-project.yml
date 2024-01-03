@@ -11,6 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: Enlitia/internal-composite-action-poetry-install@main
+        with:
+          python-version: "3.10"
+          poetry-version: "1.7.1"
       # Run custom commands ...
       - name: Run static-analysis
         run: make static-analysis
