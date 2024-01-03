@@ -1,0 +1,14 @@
+{
+    "name": "Poetry Project Workflow",
+    "description": "Enlitia starter workflow for Poetry projects",
+    "iconName": "poetry-logo",
+    "categories": [
+        "Python",
+        "testing",
+        "code-quality"
+    ],
+    "filePatterns": [
+        "pyproject.toml",
+        "poetry.lock"
+    ]
+}
