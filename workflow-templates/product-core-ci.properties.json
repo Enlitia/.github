@@ -1,0 +1,13 @@
+{
+    "name": "Product Core Image Deployment Workflow",
+    "description": "Enlitia starter workflow for deploying images related to Product Core projects",
+    "iconName": "docker-logo",
+    "categories": [
+        "Docker",
+        "continuous-integration",
+        "deployment"
+    ],
+    "filePatterns": [
+        "Dockerfile"
+    ]
+}

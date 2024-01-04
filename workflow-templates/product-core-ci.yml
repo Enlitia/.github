@@ -1,0 +1,33 @@
+###! Required environment/repository variables and secrets
+
+# Variables:
+# REGISTRY_SERVER: str (suggestion: at environment level)
+# DOCKER_IMAGE_NAME: str (suggestion: at repository level)
+# DOCKER_IMAGE_PATH: str (suggestion: at repository level)
+
+# Secrets:
+# REGISTRY_USERNAME: str (suggestion: at environment level)
+# REGISTRY_PASSWORD: str (suggestion: at environment level)
+# ENLITIA_SUBMODULES_TOKEN: str (suggestion: at repository level)
+
+name: Build and deploy image
+
+on:
+  pull_request:
+    branches:
+      - dev
+      - master
+    types: [ closed ]
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  build-and-push-image:
+    uses: Enlitia/product-core-github-actions/ci/image-build-and-push.yml@main
+    with:
+      DOCKER_IMAGE_TAG: ${{ github.ref_name == 'master' && 'prod' || github.ref_name == 'dev' && 'staging' || github.ref_name }}
+      #! Modify if you have different environment naming:
+      ENVIRONMENT: ${{ github.ref_name == 'master' && 'production' || github.ref_name == 'dev' && 'develop' || 'develop' }}
+    secrets: inherit
