@@ -11,6 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        ## Uncomment if your project has any Enlitia repository as submodule
+        ## And provide ENLITIA_SUBMODULES_TOKEN secret if it's a private repo
+        # with:
+        #   token: ${{ secrets.ENLITIA_SUBMODULES_TOKEN }}
+        #   submodules: recursive
       - uses: Enlitia/internal-composite-action-poetry-install@main
         with:
           python-version: "3.10"
